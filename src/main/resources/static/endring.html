@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rediger billett</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="endring.js"></script>
+    <script src="validering.js"></script>
+    <script src="Filmer.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Rediger billett</h1>
+    <!--På Endringssiden skal billettOrdre-objektets verdier vises. Bruker Bootstrap for styling av skjemaet-->
+    <div class="row">
+        <div class="col-md-4">
+            <form class="form">
+                <!--id'en skal ikke endres, men den skal være her. Vi skjuler den. Bruker mest id'en for å at alle billettene
+                 skal ha sin egen spesifikke id så vi kan referere til den og gjøre endringer eller slette den-->
+                <input type="text" id="id" hidden />
+                <div class="form-group">
+                    <label>Din bestilling:</label>
+                    <div id="feilFilm" style="color:red"></div>
+                    <div id="Film" onchange="validerFilm(this.value)" class= "dropdown">
+                    </div>
+                </div>
+
+                <!--Når brukeren har endret sine inputs eller valgt fra dropdownmeny-listen også trykker
+              på et annet sted på siden skal valideringsfunksjonene kalles for å sjekke at inputsene er riktige.
+              Funksjonene for validering defineres i validering.js.-->
+                <div class="form-group">
+                    <label for="antall">Antall</label>
+                    <input type="text" id="antall" title="Kun tall er tillatt" class="form-control"onchange="validerAntall(this.value)"/>
+                    <span id="feilAntall" style="color:red"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="fornavn">Fornavn</label>
+                    <input type="text" id="fornavn" title="Kun bokstaver tillatt" class="form-control" onchange="validerFornavn(this.value)"/>
+                    <span id="feilFornavn" style="color:red"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="etternavn">Etternavn</label>
+                    <input type="text" id="etternavn"  title="Kun bokstaver tillatt" class="form-control" onchange="validerEtternavn(this.value)"/>
+                    <span id="feilEtternavn" style="color:red"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefonnummer">Telefonnummer</label>
+                    <input type="text" id="telefonnummer" title="Kun tall er tillatt" class="form-control" onchange="validerTlf(this.value)"/>
+                    <span id="feilTlf" style="color:red"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="epost">E-post</label>
+                    <input type="text" id="epost" title="Kun alfanumeriske tegn" class="form-control" onchange="validerEpost(this.value)"/>
+                    <span id="feilEpost" style="color:red"/>
+                </div>
+
+            </form>
+
+            <!--Når denne knappen trykkes på skal funksjonen validerOgLagreBillettOrdre kalles-->
+            <button class="btn btn-primary" onclick="endreBillett()">Endre</button>
+            <br>
+            <div id="feilmelding">   <!--Der vi kan plassere feilmeldingen-->
+            </div>
+            <br/>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

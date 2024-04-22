@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Billetter - Ordreoversikt</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <script src="OrdreOversikt.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Oversikt over alle kinobilletter</h2>
+            <div id="billettene" class="table-responsive"></div>
+            <a href="/index.html" class="btn btn-primary">Registrer ny billett</a>
+            <button class="btn btn-danger" onclick="slettBillettene()">Slett alle billettene</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

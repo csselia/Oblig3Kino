@@ -29,7 +29,7 @@ public class BestillingRepository {
     Insert antyder til at vi skal legge inn data i en tabell kalt Bestilling.
      ? er plassholder for parametere av inputs.
     db er aksessobjektet vårt, er den som skal gi oss tilgang til databasen.
-    Parameterne som blir sendt til update er attributtene film, antall, fornavn, etternavn, telefonnummer og e-post, .
+    Parameterne som blir sendt til update er attributtene film, antall, fornavn, etternavn, telefonnummer og e-post.
     Dette hentes fra innBestillings-objektet med getter-metoder, vi henter inputene.
     update-metoden utfører SQL spørringen mot databasen, og erstatter plassholderne ? med inputverdiene fra innBestilings-objektet.
      */

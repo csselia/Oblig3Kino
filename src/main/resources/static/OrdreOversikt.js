@@ -52,7 +52,7 @@ function slettEnBestilling(id){
 //AJAX Get request til /slettAlle-endepunktet på serveren ved å bruke jQuery's Get metode. Hvis den er suksessfull,
 //utføres funksjonen hentAlle. Så vi kaller på slettBillettenefunksjonen, serveren svarer med å kommunisere med databasen, utfører en
 //sql setning for å slette alle radene i tabellen.
-//Deretter kaller vi på hentAlle funksjonen for å oppdatere. hentAlle henter frem det oppdaterte billettregisteret.
+//Dirigerer brukeren til Ordreoversikt for å se oppdateringen i oversikten, at billettene er slettet.
 
 function slettBillettene() {
     $.get( "/slettAlle", function() {

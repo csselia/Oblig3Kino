@@ -1,7 +1,8 @@
 function hentAlleFilmer(){
-    //GET kall til endepunktet hentFilmer. Forespørselen håndteres på serversiden som kommer til å svare med å utføre en funksjon
-    //som henter filmene fra databasen. FilmObjektene har samme attributter som Film.Java. Filmobjektene returneres i en liste.
-    //og gjennomgår funksjonen formaterFilmer som skriver ut filmene i en dropdown-meny.
+    /*GET kall til endepunktet hentFilmer. Forespørselen håndteres på serversiden som kommer til å svare med å utføre en funksjon
+    som henter filmene fra databasen. FilmObjektene er av samme klassetype Film og med dets spesifikke attributter. Filmobjektene returneres i en liste.
+    og gjennomgår funksjonen formaterFilmer som skriver ut filmene i en dropdown-meny.
+     */
     $.get("/hentFilmer", function (filmer){
         formaterFilmer(filmer);
         console.log(filmer);
@@ -13,9 +14,10 @@ function formaterFilmer(filmer){
     let ut ="<select id='valgtFilm'>"
     let forrigeFilm = "";
     ut+="<option>Velg film</option>";
-    //Første alternativ i dropdown-menyen bare så brukeren vet. De andre inputfeltene har title så når man legger
-    //musa over så kommer det en melding som gir brukeren en pekepinn på hva man skal skrive i inputfeltene
-
+    //Første alternativ i dropdown-menyen bare så brukeren vet at de skal velge film her.
+    /*De andre inputfeltene har title så når man legger
+    /musa over så kommer det en melding som gir brukeren en pekepinn på hva man skal skrive i inputfeltene
+     */
     //Forløkke som itererer gjennom listen av filmer. Inni løkken sjekker vi om filmnavnet er det samme som forrige
     //film slik at samme film ikke legges til flere ganger i dropdown-menyen
     for(const film of filmer){

@@ -11,7 +11,8 @@ function henteEnBestilling(){
     const url = "/henteEnBestilling?id=" + id;
     //henteEnBestilling defineres på serversiden, og vi skal sende inn id'en inn.
 
-    $.get(url,function(enBestilling){   //Vi skal få enBestilling tilbake, og fra den skal vi fylle ut alle feltene i endring.html, inkludert skjult id.
+    $.get(url,function(enBestilling){   //Vi skal få enBestilling (parameter som representerer data som er mottatt fra serveren)
+        // tilbake, og fra den skal vi fylle ut alle feltene i endring.html, inkludert skjult id.
         $("#id").val(enBestilling.id);
         $("#Film").val(enBestilling.Film);
         $("#antall").val(enBestilling.antall);
@@ -41,6 +42,7 @@ function endreBillett() {
         //Vi skal sende dette objektet til server. Vi bruker POST AJAX-kall.
         $.post("/endre", billettOrdre, function () {
             window.location.href = "/OrdreOversikt.html";
+            //Når vi får respons fra server skal dette utføres, redirigerer brukeren tilbake til Ordreoversikt.
         });
         //Tidligere i oblig 2, resettet vi skjemaet, men nå sendes brukeren bare tilbake til ordreoversikt-siden,
         //så skjemaet tømmes "automatisk".

@@ -19,7 +19,7 @@ public class FilmController {
     /*Vi trenger en måte å hente filmregisteret fra server. Så vi trenger en ny mapping og den skal returnere
     en liste med film-objekter.
     GetMapping - annotasjon som forteller Spring Boot at når en slik Get-forespørsel blir sendt til hentFilmer,
-    Skal denne metoden utføres. Metoden har en returtype, så den returnerer en liste av film-objekter.
+    Skal denne metoden utføres. Forventer å få en liste av film-objekter tilbake.
 
     Legger også inn IOException for å håndtere feil i input/output så klienten får tilbakemelding når
     metoden for å hentefilmer fra databasen mislykkes.

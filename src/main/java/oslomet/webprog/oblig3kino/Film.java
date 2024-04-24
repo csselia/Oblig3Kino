@@ -30,8 +30,4 @@ public class Film {
     public void setFNr(int FNr) {
         this.FNr = FNr;}
 
-
-
-
-
 }

@@ -33,6 +33,6 @@ public class FilmRepository {
         catch(Exception e){
             logger.error("Feil i hent filmer fra database " + e);
             return null;
-        } //Legger in feilhåndtering så klienten får svar hvis metoden for å hente filmer fra databasen mislykkes.
+        } //Legger inn feilhåndtering så klienten får svar hvis metoden for å hente filmer fra databasen mislykkes.
     }
 }

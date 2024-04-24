@@ -20,8 +20,7 @@ function registrer() {
         //lagre er punkt på server vi skal sende til, billettOrdre er objekt vi sender, function som utføres når vi får svar fra server
         //Vi skal sende dette objektet til server. Vi bruker POST AJAX-kall. POST fordi vi skal sende info til databasen. GET når man skal få data fra databasen.
         $.post("/lagre", billettOrdre, function () {
-            hentAlle();
+            window.location.href = 'OrdreOversikt.html'; //Redirigerer brukeren til side med ordreoversikten så de kan se kjøpet.
         });
-        window.location.href = 'OrdreOversikt.html'; //Redirigerer brukeren til ny side med ordreoversikten
     }
 }

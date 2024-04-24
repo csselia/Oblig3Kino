@@ -76,7 +76,7 @@ public class BestillingController {
     @GetMapping("/henteEnBestilling")
     public Bestilling henteEnBestilling (int id, HttpServletResponse response) throws IOException
     {   Bestilling enBestilling = rep.henteBestillingMedId(id);
-        //Hvis bestillingen ikke blir funnet i repository går den til errorhandling og det sendes feilmelding til klient
+        //Hvis bestillingen ikke blir funnet i databasen går den til errorhandling og det sendes feilmelding til klient
         if(enBestilling == null){
             response.sendError(HttpStatus.INTERNAL_SERVER_ERROR.value(),"Feil i DB - prøv igjen senere");
         }

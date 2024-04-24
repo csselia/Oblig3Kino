@@ -56,7 +56,7 @@ function slettEnBestilling(id){
 
 function slettBillettene() {
     $.get( "/slettAlle", function() {
-        hentAlle();
+        window.location.href="/OrdreOversikt.html"
     });
 }
 
